@@ -5,7 +5,7 @@ var chai = require('chai'),
     expect = chai.expect,
     _ = require('lodash'),
     winston = require('../../../config/winston'),
-    User = require('../../../app/models/user');
+    User = require('../../../app/models/User');
 
 chai.should();
 

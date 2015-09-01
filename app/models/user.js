@@ -20,7 +20,8 @@ module.exports = function(sequelize, DataTypes) {
 			twitterKey: DataTypes.STRING,
 			twitterSecret: DataTypes.STRING,
 			github: DataTypes.STRING,
-			openId: DataTypes.STRING
+			openId: DataTypes.STRING,
+			admin: { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false }
 		},
 		{
 			instanceMethods: {
@@ -37,7 +38,8 @@ module.exports = function(sequelize, DataTypes) {
 				}
 			},
 			associate: function(models) {
-				User.hasMany(models.Article);
+				User.hasMany(models.Answer);
+				User.hasMany(models.Poll);
 			}
 		}
 	);

@@ -1,33 +1,27 @@
 module.exports = {
     // This is your MYSQL Database configuration
     db: {
-        name: "mean_relational",
-        password: "",
-        username: "root",
-        host:"localhost",
-        port:3306
+        name: 'heroku_051442760722399',
+        password: 'e95164d6',
+        username: 'bb476f5d8389e6',
+        host: 'us-cdbr-iron-east-02.cleardb.net'
     },
     app: {
         name: "MEAN - A Modern Stack - Production"
     },
     facebook: {
-        clientID: "APP_ID",
-        clientSecret: "APP_SECRET",
-        callbackURL: "http://localhost:3000/auth/facebook/callback"
+        clientID: "1456935964536491",
+        clientSecret: "7355ff37692379e27d60d0b6a39b8df5",
+        callbackURL: "https://jordan-node.herokuapp.com/auth/facebook/callback"
     },
     twitter: {
-        clientID: "CONSUMER_KEY",
-        clientSecret: "CONSUMER_SECRET",
-        callbackURL: "http://localhost:3000/auth/twitter/callback"
-    },
-    github: {
-        clientID: "APP_ID",
-        clientSecret: "APP_SECRET",
-        callbackURL: "http://localhost:3000/auth/github/callback"
+        clientID: "cPQE671ygfLeV5PMt6Gw",
+        clientSecret: "QA9jQJXhcd2NltJ716altk2jfxKfrqjRhBQgGU",
+        callbackURL: "https://jordan-node.herokuapp.com/auth/twitter/callback"
     },
     google: {
         clientID: "APP_ID",
         clientSecret: "APP_SECRET",
-        callbackURL: "http://localhost:3000/auth/google/callback"
+        callbackURL: "https://jordan-node.herokuapp.com/auth/google/callback"
     }
 };

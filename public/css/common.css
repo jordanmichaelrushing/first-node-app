@@ -23,3 +23,10 @@ footer {
 footer p {
     padding:5px 0 12px 10px
 }
+.control-group input[type=radio] {margin-top: -5px}
+.control-group h4 {display: inline-block;margin-left: 10px}
+.unstyled {padding: 0;}
+.unstyled li {list-style: none}
+.control-group {min-height: 50px}
+.center-align {text-align: center}
+.form-actions {margin-top: 15px}

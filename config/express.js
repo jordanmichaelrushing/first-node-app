@@ -70,7 +70,7 @@ module.exports = function(app, passport) {
     app.use(passport.session());
 
     // Globbing routing files
-    config.getGlobbedFiles('./app/routes/**/*.js').forEach(function(routePath) {
+    config.getGlobbedFiles('./app/routes/*.js').forEach(function(routePath) {
       require(path.resolve(routePath))(app);
     });
 

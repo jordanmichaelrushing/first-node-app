@@ -1,0 +1,39 @@
+<section data-ng-controller="PollsController">
+	<form class="form-horizontal" data-ng-submit="create()">
+		<div class="control-group">
+			<label class="control-label col-xs-6" for="title">Poll Question</label>
+			<span class="controls col-xs-6">
+				<input type="text" data-ng-model="title" id="title" placeholder="Title" required>
+			</span>
+		</div>
+		<div class="control-group">
+			<label class="control-label col-xs-6" for="question_one">Answer One</label>
+			<span class="controls col-xs-6">
+				<input type="text" data-ng-model="question_one" id="question_one" placeholder="Answer One" required>
+			</span>
+		</div>
+		<div class="control-group">
+			<label class="control-label col-xs-6" for="question_two">Answer Two</label>
+			<span class="controls col-xs-6">
+				<input type="text" data-ng-model="question_two" id="question_two" placeholder="Answer Two" required>
+			</span>
+		</div>
+		<div class="control-group">
+			<label class="control-label col-xs-6" for="question_three">Answer Three</label>
+			<span class="controls col-xs-6">
+				<input type="text" data-ng-model="question_three" id="question_three" placeholder="Answer Three" required>
+			</span>
+		</div>
+		<div class="control-group">
+			<label class="control-label col-xs-6" for="question_four">Answer Four</label>
+			<span class="controls col-xs-6">
+				<input type="text" data-ng-model="question_four" id="question_four" placeholder="Answer Four" required>
+			</span>
+		</div>
+		<div class="control-group col-xs-6 pull-right">
+			<span class="controls col-xs-6">
+				<input type="submit" class="btn">
+			</span>
+		</div>
+	</form>
+</section>

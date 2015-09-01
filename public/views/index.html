@@ -1,3 +1,43 @@
-<section data-ng-controller="IndexController">
-	<h1>This is the home view</h1>
+<section data-ng-controller="PollsController" data-ng-init="random()">
+  <div data-ng-show="poll.poll">
+    <h2>{{poll.title}}</h2>
+    <div data-ng-hide="!poll.poll.user"><h4>Poll Created By: {{poll.user.name}}</h4></div>
+    <div><h4>Poll Created On: {{poll.updatedAt | date:'medium'}}</h4></div>
+    <div data-ng-show="global.user.id == poll.poll.user.id">
+      <a class="btn" href="/#!/polls/{{poll.poll.id}}/edit">
+        <i class="icon-edit"></i>
+      </a> 
+      <a class="btn" data-ng-click="remove();">
+        <i class="icon-trash"></i>
+      </a>
+    </div>
+
+    <section data-ng-controller="AnswersController" >
+      <form class="form-horizontal" data-ng-submit="create()">
+        <div class="control-group">
+          <input type="hidden" name="pollId" ng-value="{{poll.poll.id}}">
+          <input type="radio" name="content" ng-model="content" value="{{poll.poll.question_one}}">
+          <h4>{{poll.poll.question_one}}</h4>
+        </div>
+        <div class="control-group">
+          <input type="radio" name="content" ng-model="content" value="{{poll.poll.question_two}}">
+          <h4>{{poll.poll.question_two}}</h4>
+        </div>
+        <div class="control-group">
+          <input type="radio" name="content" ng-model="content" value="{{poll.poll.question_three}}">
+          <h4>{{poll.poll.question_three}}</h4>
+        </div>
+        <div class="control-group">
+          <input type="radio" name="content" ng-model="content" value="{{poll.poll.question_four}}">
+          <h4>{{poll.poll.question_four}}</h4>
+        </div>
+        <div class="control-group">
+          <div class="controls">
+            <input type="submit" class="btn">
+          </div>
+        </div>
+      </form>
+    </section>
+  </div>
+  <h2 data-ng-hide="poll.poll">No new polls. <a href="/polls/create">Create</a> One</h2>
 </section>

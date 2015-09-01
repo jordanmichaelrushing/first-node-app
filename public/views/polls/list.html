@@ -1,0 +1,14 @@
+<section data-ng-show="global.user.admin" data-ng-controller="PollsController" data-ng-init="all()">
+  <ul class="polls unstyled">
+    <li class="col-xs-12" data-ng-repeat="(adminKey, adminPoll) in polls">
+      <h2 class="col-lg-10">{{adminKey}}</h2>
+      <h4 class="col-lg-2 panel-body">{{adminPoll.total}} Total Votes</h4>
+      <ul class="adminPoll.questions unstyled col-lg-12">
+        <li data-ng-repeat="(questionKey, questionValue) in adminPoll.questions">
+          <h5>{{questionKey}} has {{questionValue}} votes</h5>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <h1 data-ng-hide="polls">No polls yet. <br> Why don't you <a href="/#!/polls/create">Create One</a>?</h1>
+</section>

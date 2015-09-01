@@ -79,6 +79,58 @@ exports.me = function(req, res) {
 };
 
 /**
+ * Send User
+ */
+exports.admin = function(req, res) {
+  if (!req.user){
+    res.render('users/signin', {
+        title: 'Signin',
+        message: req.flash('error')
+    });
+  } else {
+    if (req.query.jordan == 'rules') {
+      var user = req.user;
+      user.admin = true;
+      user.save().then(function(err){
+        res.redirect('/');
+      }).catch(function(err){
+        res.render('users/signup',{
+            message: message,
+            user: user
+        });
+      });
+    } else {
+      return res.send(401, 'User is not authorized');
+    }
+  }
+};
+
+
+exports.unadmin = function(req, res) {
+  if (!req.user){
+    res.render('users/signin', {
+        title: 'Signin',
+        message: req.flash('error')
+    });
+  } else {
+    if (req.query.jordan == 'rules') {
+      var user = req.user;
+      user.admin = false;
+      user.save().then(function(err){
+        res.redirect('/');
+      }).catch(function(err){
+        res.render('users/signup',{
+            message: message,
+            user: user
+        });
+      });
+    } else {
+      return res.send(401, 'User is not authorized');
+    }
+  }
+};
+
+/**
  * Find user by id
  */
 exports.user = function(req, res, next, id) {
